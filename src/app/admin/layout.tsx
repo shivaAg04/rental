@@ -16,10 +16,10 @@ export default async function AdminLayout({
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
           <Link href="/admin/listings" className="flex items-center gap-2">
             <span className="flex size-8 items-center justify-center rounded-lg bg-brand text-brand-foreground font-bold">
-              R
+              RN
             </span>
             <span className="text-sm font-semibold tracking-tight">
-              Rentro Admin
+              RN Rentals Admin
             </span>
           </Link>
 

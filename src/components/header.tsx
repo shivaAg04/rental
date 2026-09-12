@@ -8,9 +8,9 @@ export function Header() {
       <div className="mx-auto flex max-w-7xl items-center gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <Link href="/" className="flex shrink-0 items-center gap-2">
           <span className="flex size-8 items-center justify-center rounded-lg bg-brand text-brand-foreground font-bold">
-            R
+            RN
           </span>
-          <span className="text-lg font-semibold tracking-tight">Rentro</span>
+          <span className="text-lg font-semibold tracking-tight">RN Rentals</span>
         </Link>
 
         <div className="relative mx-2 hidden flex-1 items-center md:flex">
