@@ -34,12 +34,12 @@ export default async function ListingPage({
     where: { id },
     include: { pricing: true, images: { orderBy: { order: "asc" } } },
   });
-  if (!dbItem) notFound();
+  if (!dbItem || !dbItem.active) notFound();
   const item = toRentalItem(dbItem);
 
   const startingPrice = lowestMonthlyPrice(item);
   const relatedDbItems = await prisma.rentalItem.findMany({
-    where: { category: item.category, id: { not: item.id } },
+    where: { category: item.category, id: { not: item.id }, active: true },
     include: { pricing: true, images: { orderBy: { order: "asc" } } },
     take: 4,
   });

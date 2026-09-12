@@ -28,5 +28,6 @@ export function toRentalItem(item: DbItemWithRelations): RentalItem {
       .sort((a, b) => a.order - b.order)
       .map((img) => img.url),
     featured: item.featured,
+    active: item.active,
   };
 }

@@ -24,4 +24,5 @@ export type RentalItem = {
   gradient: [string, string];
   images: string[];
   featured?: boolean;
+  active: boolean;
 };

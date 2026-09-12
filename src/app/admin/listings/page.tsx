@@ -5,6 +5,7 @@ import { formatINR } from "@/lib/format";
 import { toRentalItem } from "@/lib/mappers";
 import { lowestMonthlyPrice } from "@/lib/pricing";
 import { prisma } from "@/lib/prisma";
+import { ActiveToggle } from "./active-toggle";
 import { DeleteItemButton } from "./delete-item-button";
 
 export const dynamic = "force-dynamic";
@@ -43,12 +44,16 @@ export default async function AdminListingsPage() {
               <th className="px-4 py-3 font-medium">Starting price</th>
               <th className="px-4 py-3 font-medium">Rating</th>
               <th className="px-4 py-3 font-medium">Featured</th>
+              <th className="px-4 py-3 font-medium">Active</th>
               <th className="px-4 py-3 font-medium text-right">Actions</th>
             </tr>
           </thead>
           <tbody>
             {items.map((item) => (
-              <tr key={item.id} className="border-b border-border last:border-0">
+              <tr
+                key={item.id}
+                className={`border-b border-border last:border-0 ${item.active ? "" : "opacity-50"}`}
+              >
                 <td className="px-4 py-3">
                   <div className="flex items-center gap-3">
                     <ItemMedia
@@ -81,6 +86,13 @@ export default async function AdminListingsPage() {
                   ) : (
                     <span className="text-muted">—</span>
                   )}
+                </td>
+                <td className="px-4 py-3">
+                  <ActiveToggle
+                    id={item.id}
+                    title={item.title}
+                    active={item.active}
+                  />
                 </td>
                 <td className="px-4 py-3">
                   <div className="flex items-center justify-end gap-2">

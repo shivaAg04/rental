@@ -164,3 +164,11 @@ export async function deleteItemAction(id: string) {
   revalidatePath("/admin/listings");
   revalidatePath("/");
 }
+
+export async function toggleItemActiveAction(id: string, active: boolean) {
+  await requireAdmin();
+  await prisma.rentalItem.update({ where: { id }, data: { active } });
+  revalidatePath("/admin/listings");
+  revalidatePath("/");
+  revalidatePath(`/listing/${id}`);
+}
