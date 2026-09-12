@@ -1,4 +1,4 @@
-import { CalendarRange, Shield, Sparkles } from "lucide-react";
+import { CalendarRange, Phone, Shield, Sparkles } from "lucide-react";
 
 export function Hero() {
   return (
@@ -28,16 +28,11 @@ export function Hero() {
 
         <div className="mt-8 flex flex-wrap items-center gap-3">
           <a
-            href="#listings"
-            className="rounded-full bg-brand px-6 py-3 text-sm font-semibold text-brand-foreground shadow-sm transition-colors hover:bg-brand-hover"
+            href="tel:+916299311018"
+            className="flex items-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-brand-foreground shadow-sm transition-colors hover:bg-brand-hover"
           >
-            Start browsing
-          </a>
-          <a
-            href="#"
-            className="rounded-full border border-border bg-surface px-6 py-3 text-sm font-semibold transition-colors hover:bg-surface-muted"
-          >
-            How it works
+            <Phone className="size-4" />
+            +91 62993 11018
           </a>
         </div>
 
