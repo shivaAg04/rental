@@ -1,26 +1,121 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #faf9f7;
+  --surface: #ffffff;
+  --surface-muted: #f3f1ec;
+  --foreground: #1c1b19;
+  --muted: #6b6862;
+  --border: #e7e3da;
+
+  --brand: #0f766e;
+  --brand-hover: #0d5f58;
+  --brand-foreground: #ecfdf5;
+  --brand-soft: #e6f4f1;
+
+  --accent: #e8823a;
+  --accent-hover: #d16f2a;
+  --accent-foreground: #2a1608;
+
+  --success: #2e8b57;
+  --danger: #d94f4f;
+
+  --ring: #0f766e;
+
+  --shadow-color: 220 20% 20%;
+}
+
+[data-theme="dark"] {
+  --background: #14161a;
+  --surface: #1b1e23;
+  --surface-muted: #22262c;
+  --foreground: #f2f1ee;
+  --muted: #9a9891;
+  --border: #2c3036;
+
+  --brand: #2dd4bf;
+  --brand-hover: #5eead4;
+  --brand-foreground: #06201d;
+  --brand-soft: #172a28;
+
+  --accent: #f0975a;
+  --accent-hover: #f6ab79;
+  --accent-foreground: #2a1608;
+
+  --success: #4ade80;
+  --danger: #f87171;
+
+  --ring: #2dd4bf;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-brand-soft: var(--brand-soft);
+
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+  --color-ring: var(--ring);
+
+  --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  border-color: var(--border);
+}
+
+html {
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: var(--color-brand);
+  color: var(--color-brand-foreground);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 2px;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

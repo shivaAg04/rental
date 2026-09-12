@@ -1,0 +1,60 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+enum Role {
+  CUSTOMER
+  ADMIN
+}
+
+model User {
+  id           String   @id @default(cuid())
+  name         String
+  email        String   @unique
+  passwordHash String
+  role         Role     @default(CUSTOMER)
+  createdAt    DateTime @default(now())
+}
+
+model RentalItem {
+  id           String       @id @default(cuid())
+  title        String
+  category     String
+  description  String
+  deposit      Int
+  rating       Float        @default(4.5)
+  reviewCount  Int          @default(0)
+  gradientFrom String
+  gradientTo   String
+  featured     Boolean      @default(false)
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+  pricing      TenurePlan[]
+  images       ItemImage[]
+}
+
+model TenurePlan {
+  id             String     @id @default(cuid())
+  months         Int
+  pricePerMonth  Int
+  item           RentalItem @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  itemId         String
+
+  @@unique([itemId, months])
+}
+
+model ItemImage {
+  id     String     @id @default(cuid())
+  url    String
+  order  Int        @default(0)
+  item   RentalItem @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  itemId String
+}
