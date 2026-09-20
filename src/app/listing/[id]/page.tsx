@@ -21,7 +21,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { id } = await params;
   const item = await prisma.rentalItem.findUnique({ where: { id } });
-  return { title: item ? `${item.title} — Woko` : "Woko" };
+  return { title: item ? `${item.title} — Voko` : "Voko" };
 }
 
 export default async function ListingPage({

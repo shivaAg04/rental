@@ -12,9 +12,9 @@ export default async function SignInPage({
       <div className="w-full max-w-sm rounded-2xl border border-border bg-surface p-8 shadow-sm">
         <div className="flex items-center gap-2">
           <span className="flex size-8 items-center justify-center rounded-lg bg-brand text-brand-foreground font-bold">
-            W
+            V
           </span>
-          <span className="text-lg font-semibold tracking-tight">Woko</span>
+          <span className="text-lg font-semibold tracking-tight">Voko</span>
         </div>
 
         <h1 className="mt-6 text-xl font-bold tracking-tight">Admin sign in</h1>
