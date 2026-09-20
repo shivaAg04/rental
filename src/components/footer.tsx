@@ -15,11 +15,11 @@ export function Footer() {
           across India.
         </p>
         <a
-          href="tel:+916299311018"
+          href="tel:+918299539414"
           className="mt-3 flex w-fit items-center gap-2 text-sm font-medium text-brand transition-colors hover:text-brand-hover"
         >
           <Phone className="size-4" />
-          +91 62993 11018
+          +91 82995 39414
         </a>
 
         <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-border pt-6 text-sm text-muted sm:flex-row">

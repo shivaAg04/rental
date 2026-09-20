@@ -28,11 +28,11 @@ export function Hero() {
 
         <div className="mt-8 flex flex-wrap items-center gap-3">
           <a
-            href="tel:+916299311018"
+            href="tel:+918299539414"
             className="flex items-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-brand-foreground shadow-sm transition-colors hover:bg-brand-hover"
           >
             <Phone className="size-4" />
-            +91 62993 11018
+            +91 82995 39414
           </a>
         </div>
 
