@@ -6,9 +6,9 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="flex items-center gap-2">
           <span className="flex size-8 items-center justify-center rounded-lg bg-brand text-brand-foreground font-bold">
-            RN
+            W
           </span>
-          <span className="text-lg font-semibold tracking-tight">RN Rentals</span>
+          <span className="text-lg font-semibold tracking-tight">Woko</span>
         </div>
         <p className="mt-3 text-sm text-muted">
           Furniture &amp; electronics on flexible monthly rent, delivered
@@ -23,7 +23,7 @@ export function Footer() {
         </a>
 
         <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-border pt-6 text-sm text-muted sm:flex-row">
-          <p>© {new Date().getFullYear()} RN Rentals. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Woko. All rights reserved.</p>
           <p>Made for modern Indian homes.</p>
         </div>
       </div>

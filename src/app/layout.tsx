@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "RN Rentals — Furniture & electronics on rent",
+  title: "Woko — Furniture & electronics on rent",
   description:
     "Rent furniture, appliances, and electronics with flexible 3, 6, and 12-month plans, delivered across India.",
 };
